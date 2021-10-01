@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 100vh;
+    background: url(https://images.unsplash.com/photo-1623697899811-f2403f50685e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80) center;
+    background-size: cover;
+}
+
+.container{
+    display:flex;
+    width: 500px;
+    height: 500px;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    border: 5px solid rgba(0, 0, 0, 0.6);
+}
+
+.cube{
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+
+.tooltip{
+    color: red;
+}
