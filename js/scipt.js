@@ -1,34 +1,16 @@
 const container = document.querySelector('.container');
-// const textBox = document.querySelector('#txt');
 
-// let val = parseInt(textBox.value);
+const slider = document.querySelector('#slider');
 
-makeGrid(64);
+slider.addEventListener('input', makeGridAndUpdateTooltip);
 
-document.querySelector('#slider').addEventListener('input', (e)=>{
-    document.querySelector('#txt').value = e.target.value;
-    document.querySelector(".tooltip").style.display = 'block';
-    setInterval(removeTooltip, 2000);
-});
-
-function removeTooltip(){
-    document.querySelector(".tooltip").style.display = 'none'
+function makeGridAndUpdateTooltip(e){
+    const val = Number(slider.value);
+    makeGrid(val);
+    document.querySelector("#number").textContent = val;
 }
 
-
-// textBox.addEventListener('input', (e)=>{
-//     let count = parseInt(e.target.value);
-//     if(count > 64){
-//         return;
-//     }
-//     makeGrid(count);
-// });
-
-function colorit(e){
-    e.target.style.backgroundColor = 'black';
-}
-
-
+makeGrid(16);
 
 function makeGrid(count){
     while(container.firstChild){
@@ -44,4 +26,9 @@ function makeGrid(count){
 
     let allDivs = document.querySelectorAll('.cube');
     allDivs.forEach(each => each.addEventListener('mouseenter', colorit));
+}
+
+
+function colorit(e){
+    e.target.style.backgroundColor = 'rgb(88, 75, 133)';
 }
